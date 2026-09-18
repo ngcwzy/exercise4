@@ -83,13 +83,12 @@ def main():
     print("CAMPUS LOST-AND-FOUND ASSISTANT")
     print("=" * 50)
 
-    # 原 input() 被替换为固定内容
     description = "I lost a black bag"
     print(f"\nDescribe the item you lost: {description}")
     print("\nSearching for possible matches...\n")
 
     system_prompt, user_prompt = build_prompt(description, available_items)
-    response_text = ask_qwen(system_prompt, user_prompt) 
+    response_text = ask_qwen(system_prompt, user_prompt)
 
     try:
         result = parse_response(response_text)
